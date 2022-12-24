@@ -28,7 +28,7 @@ int Player::getCards() const {
 
 ostream& operator<<(ostream& os, const Player& player)
 {
-    os << "player id: " <<  player.getPlayerId() << ", goals: " << player.getGoals() << ", cards: "
+    os << "player id: " <<  player.getPlayerId() << ", team: " << player.getTeamId() << ", cards: "
        << player.getCards();
     return os;
 }

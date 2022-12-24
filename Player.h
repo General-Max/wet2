@@ -20,7 +20,7 @@ public:
     * @param cards
     * @param goalkeeper
     */
-   Player(int playerId, int teamId, const permutation_t& spirit, int gamesPlayed, int ability, int cards, bool goalkeeper)
+   Player(int playerId, int teamId, const permutation_t& spirit, int gamesPlayed, int ability, int cards, bool goalkeeper);
 
     /**
      * destructor of player
@@ -89,7 +89,7 @@ private:
     int m_teamId;
     permutation_t m_spirit;
     int m_gamesPlayed;
-    int ability;
+    int m_ability;
     int m_cards;
     bool m_goalKeeper;
 };
