@@ -21,11 +21,11 @@ int main()
     shared_ptr<Team> t5 = std::make_shared<Team>(5);
 
     permutation_t per= permutation_t();
-    shared_ptr<Player> p1 = std::make_shared<Player>(1,per, 1,1,1,false);
-    shared_ptr<Player> p2 = std::make_shared<Player>(2,per, 1,1,1,false);
-    shared_ptr<Player> p3 = std::make_shared<Player>(3,per, 1,1,1,false);
-    shared_ptr<Player> p4 = std::make_shared<Player>(4,per, 1,1,1,false);
-    shared_ptr<Player> p5 = std::make_shared<Player>(5,per, 1,1,1,false);
+    shared_ptr<Player> p1 = std::make_shared<Player>(1,1, per,1,1,1,false);
+    shared_ptr<Player> p2 = std::make_shared<Player>(2,1, per,1,1,1,false);
+    shared_ptr<Player> p3 = std::make_shared<Player>(3,1, per, 1,1,1,false);
+    shared_ptr<Player> p4 = std::make_shared<Player>(4,1, per,1,1,1,false);
+    shared_ptr<Player> p5 = std::make_shared<Player>(5,1, per,1,1,1,false);
 
 
     HashMap h = HashMap();
