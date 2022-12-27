@@ -4,6 +4,7 @@
 #include <ostream>
 #include "Node.h"
 using std::ostream;
+class Node;
 
 class Team{
 public:

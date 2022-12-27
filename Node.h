@@ -6,6 +6,7 @@
 #include "Team.h"
 #include <memory>
 #include "wet2util.h"
+class Team;
 
 class Node
 {

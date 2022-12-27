@@ -48,3 +48,7 @@ void Player::setGoalKeeper(bool isGoalKeeper) {
 permutation_t Player::getSpirit(){
     return m_spirit;
 }
+
+void Player::setSpirit(permutation_t newSpirit) {
+    this->m_spirit = newSpirit;
+}
