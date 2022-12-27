@@ -19,7 +19,7 @@ HashMap::~HashMap()
 {
     for (int i=0; i<m_size; i++){
         if(m_data[i]!=nullptr){
-            delete m_data[i]
+            delete m_data[i];
         }
     }
     delete[] m_data;
