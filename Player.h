@@ -22,6 +22,7 @@ public:
     */
    Player(int playerId, int teamId, const permutation_t& spirit, int gamesPlayed, int ability, int cards, bool goalkeeper);
 
+
     /**
      * destructor of player
      */
