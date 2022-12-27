@@ -2,6 +2,7 @@
 #define WET2_TEAM_H
 
 #include <ostream>
+#include "Node.h"
 using std::ostream;
 
 class Team{
@@ -55,6 +56,28 @@ public:
     int getGoalkeepers() const;
 
     /**
+     * @return the node of the team's root in the inverse tree
+     */
+    Node* getRootInTree() const;
+
+    /**
+     * set the root of the inverse tree
+     * @param newRoot
+     */
+    void setRootInTree(Node* newRoot);
+
+    /**
+     * @return the spirit of the team (spirit of all the players in it)
+     */
+    permutation_t getTeamSpirit() const;
+
+    /**
+     * set a new spirit to the team
+     * @param newTeamSpirit
+     */
+    void setTeamSpirit(permutation_t newTeamSpirit);
+
+    /**
      * increase the number of games that the players played together by one
      */
     void increasePlayedTogether();
@@ -98,6 +121,8 @@ private:
     int m_totalPlayersAbility;
     int m_totalCards;
     int m_goalkeepers;
+    Node* m_rootInTree;
+    permutation_t m_teamSpirit;
 };
 
 #endif //WET2_TEAM_H

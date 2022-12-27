@@ -3,7 +3,7 @@
 #include "Team.h"
 
 Team::Team(int teamId) : m_teamId(teamId), m_points(0), m_playedTogether(0), m_numOfPlayers(0), m_totalPlayersAbility(0),
-                         m_totalCards(0), m_goalkeepers(0) { }
+                         m_totalCards(0), m_goalkeepers(0), m_rootInTree(nullptr), m_teamSpirit(permutation_t()) { }
 
 int Team::getTeamId() const {
     return m_teamId;
@@ -48,6 +48,23 @@ void Team::updatePoints(int points) {
 ostream &operator<<(ostream &os, const Team &team) {
     os << "team id: " <<  team.getTeamId() << ", score: " << team.getScore();
     return os;
+}
+
+Node *Team::getRootInTree() const {
+    return m_rootInTree;
+}
+
+void Team::setRootInTree(Node *newRoot) {
+    m_rootInTree = newRoot;
+}
+
+permutation_t Team::getTeamSpirit() const {
+    return m_teamSpirit;
+}
+
+void Team::setTeamSpirit(permutation_t newTeamSpirit)
+{
+    m_teamSpirit = newTeamSpirit;
 }
 
 

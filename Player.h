@@ -84,6 +84,12 @@ public:
      */
     permutation_t getSpirit();
 
+    /**
+     * update the spirit of the player
+     * @param newSpirit
+     */
+    void setSpirit(permutation_t newSpirit);
+
 private:
     int m_playerId;
     int m_teamId;

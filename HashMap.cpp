@@ -1,7 +1,7 @@
 
 #include "HashMap.h"
 
-HashMap::HashMap() : m_data(new ListNode*[INITIAL_SIZE]), m_size(INITIAL_SIZE), m_occupancy(0)
+HashMap::HashMap() : m_data(new Node*[INITIAL_SIZE]), m_size(INITIAL_SIZE), m_occupancy(0)
 {
     for(int i=0; i<INITIAL_SIZE; i++){
         m_data[i] = nullptr;

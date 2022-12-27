@@ -9,8 +9,20 @@ void UnionFind::makeSet(shared_ptr<Player> player, shared_ptr<Team> team)
 
 void unionTeams(shared_ptr<Team> boughtTeam, shared_ptr<Team> buyerTeam)
 {
-    voi
-    if(boughtTeam->getNumOfPlayers() <= buyerTeam->getNumOfPlayers()) {
+    Node* boughtTeamRoot = boughtTeam->getRootInTree();
+    Node* buyerTeamRoot = buyerTeam->getRootInTree();
+    permutation_t newSpirit;
+    if(boughtTeam->getNumOfPlayers() <= buyerTeam->getNumOfPlayers())
+    {
+        boughtTeamRoot->setParent(buyerTeamRoot);
+        newSpirit = (((buyerTeamRoot->getPlayer())->getSpirit()).inv())*
+                (buyerTeamRoot->getTeam()->getTeamSpirit())
+                *((boughtTeamRoot->getPlayer())->getSpirit());
+        boughtTeamRoot->getPlayer()->setSpirit(newSpirit);
+    }
 
+    else
+    {
+        buyerTeamRoot->setParent(boughtTeamRoot);
     }
 }
