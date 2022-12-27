@@ -17,7 +17,7 @@ const double COEFFICIENT = 0.61803;
 class HashMap
 {
 private:
-    ListNode** m_data;
+    Node** m_data;
     int m_size;
     int m_occupancy;
     void expand();
@@ -31,7 +31,7 @@ public:
     int getOccupancy() const;
 
     void insertElement(shared_ptr<Player> player, std::shared_ptr<Team> playerTeam);
-    ListNode* findElement(int key) const;
+    Node* findElement(int key) const;
     void printHash();
 
 };

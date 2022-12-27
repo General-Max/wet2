@@ -38,7 +38,7 @@ void HashMap::insertElement(shared_ptr<Player> player, std::shared_ptr<Team> pla
     }
     int key = player->getPlayerId();
 
-    ListNode* newNode = new ListNode(player);
+    Node* newNode = new Node(player);
 
     // in case it is the root of the inverse tree
     if((playerTeam->getNumOfPlayers())==0){
@@ -52,9 +52,9 @@ void HashMap::insertElement(shared_ptr<Player> player, std::shared_ptr<Team> pla
 }
 void HashMap::expand()
 {
-    ListNode** newData = new ListNode*[m_size*RATE];
-    ListNode* temp;
-    ListNode** oldArray = m_data;
+    Node** newData = new Node*[m_size*RATE];
+    Node* temp;
+    Node** oldArray = m_data;
     m_data = newData;
     int oldSize = m_size;
     m_size*=RATE;
@@ -68,10 +68,10 @@ void HashMap::expand()
     delete[] oldArray;
 }
 
-ListNode* HashMap::findElement(int playerId) const
+Node* HashMap::findElement(int playerId) const
 {
     int index = HashFunction(playerId);
-    ListNode* temp = m_data[index];
+    Node* temp = m_data[index];
     while(temp!= nullptr){
         if(temp->getPlayer()->getPlayerId() == playerId){
             return temp;
@@ -83,7 +83,7 @@ ListNode* HashMap::findElement(int playerId) const
 
 void HashMap::printHash()
 {
-    ListNode* temp;
+    Node* temp;
     for(int i=0;i<m_size;i++){
         temp = m_data[i];
         while(temp!= nullptr){
