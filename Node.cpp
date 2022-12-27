@@ -19,7 +19,7 @@ Node& Node::operator=(Node &other)
     this->m_next=other.m_next;
     this->m_team = other.m_team;
     this->m_parent=other.m_parent;
-    this->m_buyingTeamSpirit = other.m_buyingTeamSpirit;
+    //this->m_buyingTeamSpirit = other.m_buyingTeamSpirit;
 }
 
 //getters and setters

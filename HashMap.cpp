@@ -22,6 +22,7 @@ HashMap::~HashMap()
             delete m_data[i];
         }
     }
+
     delete[] m_data;
 }
 
