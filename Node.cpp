@@ -1,10 +1,9 @@
 #include "Node.h"
 
-Node::Node() : m_player(nullptr), m_next(nullptr), m_parent(nullptr), m_team(nullptr),
-               m_buyingTeamSpirit(permutation_t()) {}
+Node::Node() : m_player(nullptr), m_next(nullptr), m_parent(nullptr), m_team(nullptr)) {}
 
 Node::Node(shared_ptr<Player> player) : m_player(player), m_next(nullptr), m_parent(nullptr),
-m_team(nullptr), m_buyingTeamSpirit(permutation_t()) {}
+m_team(nullptr) {}
 
 Node::~Node()
 {
