@@ -1,6 +1,5 @@
 #include "Player.h"
 
-
 Player::   Player(int playerId, int teamId, const permutation_t& spirit, int gamesPlayed, int ability, int cards, bool goalkeeper)
         : m_playerId(playerId),
         m_teamId(teamId), m_spirit(spirit), m_gamesPlayed(gamesPlayed),
