@@ -4,8 +4,8 @@
 
 #include <iostream>
 
-const int RATE=2;
-const int INITIAL_SIZE = 2;
+//const int RATE=2;
+//const int INITIAL_SIZE = 2;
 
 template<class T>
 class DynamicArray

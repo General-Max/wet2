@@ -22,12 +22,18 @@ public:
     //  destructor
     ~LinkedList();
 
-    void addToList(T val);
+    void add(T val);
 
     /**
      * prints the list
      */
     void printList();
+
+    bool isEmpty() const;
+
+    void pop();
+
+    T& getElement() const; //check
 
 private:
     ListNode* m_first;
@@ -65,19 +71,19 @@ void LinkedList<T>::printList()
     if(this->m_first == nullptr){
         return;
     }
-    std::cout << *this->m_first->m_nodeData <<  "-> ";
-    ListNode* temp = this->m_first->m_next;
+    std::cout << (this->m_first)->m_nodeData <<  "-> ";
+    ListNode* temp = (this->m_first)->m_next;
     while(temp != nullptr){
-        std::cout << *temp->m_nodeData <<  "-> ";
+        std::cout << temp->m_nodeData <<  "-> ";
         temp = temp->m_next;
     }
-    std::cout << "|" << std::endl;
+    std::cout << "||" << std::endl;
 }
 
 template<class T>
-void LinkedList<T>::addToList(T val)
+void LinkedList<T>::add(T val)
 {
-    ListNode temp;
+    ListNode* temp;
     try{
         temp = initNode(val);
         if(m_first==nullptr){
@@ -92,10 +98,27 @@ void LinkedList<T>::addToList(T val)
     catch(std::bad_alloc &e){
         throw e;
     }
-
-
 }
 
+template<class T>
+bool LinkedList<T>::isEmpty() const
+{
+    return (m_first == nullptr);
+}
+
+template<class  T>
+void LinkedList<T>::pop()
+{
+    ListNode* toDelete = this->m_first;
+    this->m_first = (this->m_first)->m_next;
+    delete toDelete;
+}
+
+template<class T>
+T& LinkedList<T>::getElement() const //check the &
+{
+    return &(m_first->m_nodeData);
+}
 
 
 #endif //WET2_LINKEDLIST_H
